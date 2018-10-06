@@ -34,7 +34,7 @@ Y(n+1) = Yn + Ydiff
     void graphic::cidDDA()
 {
     double dx = last_point.x() - first_point.x();
-    double dy = last_point.y() - last_point.y();
+    double dy = last_point.y() - first_point.y();
     double x_diff, y_diff;
     double max_using_pixel; 
     double x, y;
