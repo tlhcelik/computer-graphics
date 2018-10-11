@@ -30,7 +30,7 @@ void draw_circle_iterative_method(int radius, int x0, int y0)
     x = x0 + (cos(angle) * radius);
     y = y0 + (sin(angle) * radius);
     
-    putPixel(x,y);
+    PutPixel(x,y);
     
     angle += 1.0;
   }
@@ -38,3 +38,49 @@ void draw_circle_iterative_method(int radius, int x0, int y0)
 ```
 
 Bresenham Draw Circle Algorithm :books: [Go to PDF](https://github.com/tlhcelik/computer-graphics/edit/master/w2/bresenham-circle-algorithm.pdf)
+
+Code like this :
+
+```c
+void graphic::bresenham_with_draw_circle(int radius, int x0 ,int y0)
+{
+
+        int X, Y, XC, YC, RADIUS_ERROR;
+        X = radius;
+        Y = 0;
+        XC = 1 - (2*radius); // x change value
+        YC = 1; // y change value
+        RADIUS_ERROR = 0;
+
+        while (X >= Y) {
+
+            PutPixel(x0 + X, y0 + Y , rgb(255,0,0));
+            PutPixel(x0 - X, y0  + Y ,rgb(255,0,0));
+
+            PutPixel(x0 - X ,y0   - Y,rgb(255,0,0));
+            PutPixel(x0 + X, y0  - Y ,rgb(255,0,0));
+
+            PutPixel(x0 + Y, y0  + X ,rgb(255,0,0));
+            PutPixel(x0 - Y, y0  + X ,rgb(255,0,0));
+
+            PutPixel(x0 - Y, y0  - X ,rgb(255,0,0));
+            PutPixel(x0 + Y, y0  - X ,rgb(255,0,0));
+
+            Y += 1;
+            RADIUS_ERROR += YC;
+            YC += 2;
+
+            if ( (2 * RADIUS_ERROR) + XC > 0) {
+                X -= 1;
+                RADIUS_ERROR += XC;
+                XC += 2;
+            }
+        }
+}
+```
+**Code output :**
+<p align="center">
+<img width="400" height="400" src="https://github.com/tlhcelik/computer-graphics/blob/master/w2/mirror_method.gif">
+</p>
+
+
