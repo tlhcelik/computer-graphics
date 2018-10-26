@@ -1,11 +1,11 @@
- Drawing Polygon
+ **Drawing Polygon**
  
  The polygons are two-dimensional closed figure made up of straight lines. In other words, it is a closed shape 
  in which each line segments 
- intersects exactly at the endpoints. Some of the polygons and non-polygons are as follows:,
+ intersects exactly at the endpoints. Some of the polygons and non-polygons are as follows:
  
 <p align="center">
-<img width="400" height="400" src="https://github.com/tlhcelik/computer-graphics/blob/master/w3/polygons.png">
+<img width="700" height="350" src="https://github.com/tlhcelik/computer-graphics/blob/master/w3/polygons.png">
 </p>
 
 When polygon drawing use the DDA algorithm and points list. 
@@ -53,3 +53,9 @@ In Qt Creator list is a QList<type>.
     }
 }
 ```
+
+**Code Output:**
+
+<p align="center">
+<img width="400" height="400" src="https://github.com/tlhcelik/computer-graphics/blob/master/w3/draw_poly.gif">
+</p>
